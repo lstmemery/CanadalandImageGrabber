@@ -1,3 +1,12 @@
+""""Grabs screenshots of the four largest online newspapers in Canada and stitches them together.
+
+Requires:
+* Python 2.7
+* PIL
+* Selenium
+* Firefox
+"""
+
 from datetime import datetime
 
 from PIL import Image
@@ -40,5 +49,4 @@ if __name__ == '__main__':
         new_front_image.paste(open_image, image_order.next())
     now = datetime.now()
     new_front_image.save('frontpage_{}_{}_{}.png'.format(now.year, now.month, now.day))
-
     print 'Finished'
